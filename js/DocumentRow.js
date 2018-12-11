@@ -1,8 +1,8 @@
 class DocumentRow {
-    constructor() {
-        this.idRow = 0;
-        this.amount = 0;
-        this.product_id = 0;
-        this.document_id = 0;
+    constructor(i, a, p, d) {
+        this.id_row = i;
+        this.amount = a;
+        this.product_id = p;
+        this.document_id = d;
     }
 }

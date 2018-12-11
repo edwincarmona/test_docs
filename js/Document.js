@@ -1,8 +1,10 @@
 class Document {
     constructor(id, date, amt) {
-        this.idDocument = id;
+        this.id_document = id;
   
-        this.dtDate = date;
+        this.dt_date = date;
         this.amount = amt;
+
+        this.rows = new Array();
     }
 }

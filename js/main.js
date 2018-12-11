@@ -54,9 +54,38 @@ class Main {
 		});
     
     }
+	
+	theJsonPost() {
+		var document = new Document(0, "2018-12-07", 589.26);
+		document.rows[0] = new DocumentRow(0, 8963.5, 1, 0);
+		document.rows[1] = new DocumentRow(0, 8963.5, 1, 0);
+		document.rows[2] = new DocumentRow(0, 8963.5, 1, 0);
+
+	  var doc =  JSON.stringify(document);
+		
+		var settings = {
+			  "async": true,
+			  "crossDomain": true,
+			  "url": "http://localhost:9090/testapp/public/api/documents",
+			  "method": "POST",
+			  "headers": {
+				"Content-Type": "application/json",
+				"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjhiNzM3YTkzM2UwZmJhMTIzMTQwNjE5ZWU4N2ZhZjdmNDM3NmQ2NDM3ODdlYTkyMjY0MDhlMzA3ZjA2YzNjMzdiM2RkNGVlNmJhZDNhOWU1In0.eyJhdWQiOiIxIiwianRpIjoiOGI3MzdhOTMzZTBmYmExMjMxNDA2MTllZTg3ZmFmN2Y0Mzc2ZDY0Mzc4N2VhOTIyNjQwOGUzMDdmMDZjM2MzN2IzZGQ0ZWU2YmFkM2E5ZTUiLCJpYXQiOjE1NDQ1NDEzNDAsIm5iZiI6MTU0NDU0MTM0MCwiZXhwIjoxNTc2MDc3MzQwLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.TC5m-wVTzsPMtSDShzQBGcZy9awjtI3bwn8og3ma6skLzrL1bIoSSZotrgF6G-l5E60wcXCP4m5yHBS2hyl0a9zw2ufCpI8VEDw7vmpLg0QaDYynqKRaDf8UkVMRJCBg0MyiVre3Wb_5kd9ASSZ1kglKrIOaZeQDoiT5GT2YyXuxPaOWKR7qOu74nV55Q1iZPcycom0J39zmY3sauHUT_MsNniE4Bl89NFas2wdbQuvy8BSm05_cOZSeziWa1tLcdtJt4bCr4fp-OTmOl8dDBdUSxtRhV1dxThiQYJuTKrThBeClshHT3DFgplrcZGIx8gyKGEj3-g7_O2Y8xkX02ThPWwePdQtO088PvrvtBUw1aHyz04G8YUC7xVTP5NVEKkewHBHPN56HlL_sHlzWJXhIsem73HRcRg214LV9kQWm-N2BE-tpJuo7JFaMf_kDFmd99o1RBd5KN8GG09fVRYLsaJ_4UJltXIuEgHlvhE2vtluq1H6zpLZEf1h2E7BuC_ryiub7heKmEVwb5bZzQN7-qs_PbqPbh-GBsfNFxINKnumRabi9R-ZoiFe39iRki661mzWJvXtDOkqfREha6c5TYB6OkW2I8zAoBf5zK5Uq-MXHIRJGpWKlcGSgcnsGD-M12M1sRA6IvMW3ciLGBRZ8kGvSc4m_sbvjX7rXRPQ",
+				"cache-control": "no-cache",
+				"Postman-Token": "88fbcb08-a2c3-4270-bd0b-ecbfc3699c8e"
+			  },
+			  "processData": false,
+			  "data": doc
+		}
+
+		$.ajax(settings).done(function (response) {
+		  console.log(response);
+		});
+	}
 }
 
 
 var main = new Main();
-main.process();
-main.thePost();
+//main.process();
+//main.thePost();
+main.theJsonPost();
