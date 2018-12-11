@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue app</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+        {{ message }}
+  </div>
+
+  <div id="appp">
+        {{ info }}
+   </div>
+
+  <div id="ap">
+        {{ infoo }}
+  </div>
+
+  <div id="approd">
+        {{ infop }}
+  </div>
+
+  <script>
+    // var axios = require("axios");
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!'
+      }
+    })
+
+    new Vue({
+        el: '#appp',
+        data () {
+            return {
+            info: null
+            }
+        },
+        mounted () {
+            axios
+            .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+            .then(response => (this.info = response))
+        }
+        })
+
+    new Vue({
+        el: '#ap',
+        data () {
+            return {
+            infoo: null
+            }
+        },
+        mounted () {
+            axios
+            .get('http://localhost:9090/testapp/public/documents')
+            .then(response => (this.infoo = response))
+        }
+        })
+
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjViZTBhNjhhNmE2MWU0YzNmZThkMTk4MzViOTNkYWE2NmY0MmExODhhZjc4ODZjYTFiOTZlZTMyNzE5YjE4ZjdlY2U4MTY1ZmQzNjczMDQ1In0.eyJhdWQiOiIxIiwianRpIjoiNWJlMGE2OGE2YTYxZTRjM2ZlOGQxOTgzNWI5M2RhYTY2ZjQyYTE4OGFmNzg4NmNhMWI5NmVlMzI3MTliMThmN2VjZTgxNjVmZDM2NzMwNDUiLCJpYXQiOjE1NDQ0Nzg0MzcsIm5iZiI6MTU0NDQ3ODQzNywiZXhwIjoxNTc2MDE0NDM3LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.FzXOL0ZlrBsR_JSomd9MJifYQAKQaeJTtWSgw_8iQ9Nzw_EsQUqGspmReVPrRMkuCQ2CwLo6Ev0zCI2CRLYG7zKVpk1lKNg_EPri3g94FN52egXq2YSSpMZ19bNNNJtUSxIQ9VV1TmkqIHcSqF1mb0tHvAQYuXkMOs8KqZbuBKgqJIHiYghyMwJZz0RQrwexH70szzy0kMnn4SYUcy2v66uYQyUrfh8tQXQtsnkLHs923nKk1fe9ZRvZt8uY8N2UPc5vxSDofnZgTb4WBzaXa0kpyPVMQ3HIlv5adcuPdwFpA-q55z-svhXUJ2XDYuNXgtS2fqF_PV0C3RiZUi62ieLA7RtBQqzhbe_rN_Dph-8OwzhT2J6O6ThL6xYrdmDfTJrUk4eXo8626PraOl_C1RF_np2v0EDlDiuQe44BQLAjS1dirrsoxBc4OfTh5xkIzguwqlmwJbO5SNF2_mzQAP9EKo9os1kIXK8QbCgBOLC-gRTeuDQcFxSl9Eio4zqMvdpp08wh3Q9iuJYqd1QmkqMnzi8ZnvzFNeBR2PNPyugPIw9-WXObJDW-3uHTmLgiL9Bn20GqYHEhW25QEaQXsbsb6vRm1__QE4lxXKhyNriHGgxEmyVeXD3zMjyoaTgowYL5Ge2OArh0EBsTm6Gi4TSpDFrINosO6tfbUi2JzY0";
+
+
+    const AuthStr = 'Bearer '.concat(token);
+    axios.get('http://localhost:9090/testapp/public/products', { headers: { Authorization: AuthStr } }).then(response => {
+            // If request is good...
+            console.log(response.data);
+          })
+          .catch((error) => {
+            console.log('error 3 ' + error);
+          });
+  </script>
+</body>
+</html>
