@@ -56,12 +56,14 @@ class Main {
     }
 	
 	theJsonPost() {
-		var document = new Document(0, "2018-12-07", 589.26);
-		document.rows[0] = new DocumentRow(0, 8963.5, 1, 0);
-		document.rows[1] = new DocumentRow(0, 8963.5, 1, 0);
-		document.rows[2] = new DocumentRow(0, 8963.5, 1, 0);
+		var document = new Document(0, '2018-12-13', 589.26);
+		// document.rows[0] = new DocumentRow(0, 8963.58, 1, 0);
+		// document.rows[1] = new DocumentRow(0, 2358.13, 1, 0);
+		// document.rows[2] = new DocumentRow(0, 6914.75, 1, 0);
 
-	  var doc =  JSON.stringify(document);
+		var doc =  JSON.stringify(document);
+		
+		var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjU3ZGQwYzIwNzMwMzRhZTU4ZWIzNDA3YjZhMTNhYTVlNmI4ZDcxNWUzYWUzN2U3MGE0MGI2ZmRkZjY0NzNmZjNjY2QyODVlYzUzOWNjNjIxIn0.eyJhdWQiOiIxIiwianRpIjoiNTdkZDBjMjA3MzAzNGFlNThlYjM0MDdiNmExM2FhNWU2YjhkNzE1ZTNhZTM3ZTcwYTQwYjZmZGRmNjQ3M2ZmM2NjZDI4NWVjNTM5Y2M2MjEiLCJpYXQiOjE1NDQ3MTQ1NzksIm5iZiI6MTU0NDcxNDU3OSwiZXhwIjoxNTc2MjUwNTc5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.zPcJsUK1EUMQgyWSmEJw50o706SXu2Ml0PVDa7UEzVgV1bANn6cXkoZyZwkgYa2tzcTSLk6TTGdImnlWZr1k4JnhAw0yx8zimgGL3MM93x3KQAVs4WZgwej1Gr6qT9VazjzXuJ9qlvU1Xwra-WXM5Id2stt-XSug1PPZtSjPUBC4-GZ69fOjewDF161Vfjee-ht7Gtvw4DGHu8FUPgXPgJfGRjRBCxs0p-y1Ue-3ze_myWfpz6N-ifXSAe9t8j9RnR2I4xbMk5EfNb_ZsIbBWO0_z_XiayDZVbbp3teSZrVrqnYaf0cWhK7sEf_ATLT5HBp5yaNhUGEQZmQRWIE4uHGoPLEzvDsgiZ2UUFYVGbiyL2unB9rR3x3wHGvEl_-JD_3s94HLKy972W50T71wt50v2GeMFcsg46h2tr7IXzI_ccrItg-Uoyq78E8rok9jENhtGLNKJbt00Apbdd89aWcwRWmTFDuRqoabCIccBf3mBJjFhTBw7F63cb8DktLoGDOu6SRmhMiXhykV6p4u4MqrZFuKGjEU-D2nnxDJoCIt9-PznTkWZFeJE3WLvG4wBK0DC730COsZVzl5wK50k2xlDyMeUHx-61cmtlozA1EmhbLVL0cuLT-RDCTVXEyz5ghOlIlOooCwYkEfwQHL-YAEVdtcvu05Wwz9Rf2H7Cs";
 		
 		var settings = {
 			  "async": true,
@@ -69,18 +71,22 @@ class Main {
 			  "url": "http://localhost:9090/testapp/public/api/documents",
 			  "method": "POST",
 			  "headers": {
-				"Content-Type": "application/json",
-				"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjhiNzM3YTkzM2UwZmJhMTIzMTQwNjE5ZWU4N2ZhZjdmNDM3NmQ2NDM3ODdlYTkyMjY0MDhlMzA3ZjA2YzNjMzdiM2RkNGVlNmJhZDNhOWU1In0.eyJhdWQiOiIxIiwianRpIjoiOGI3MzdhOTMzZTBmYmExMjMxNDA2MTllZTg3ZmFmN2Y0Mzc2ZDY0Mzc4N2VhOTIyNjQwOGUzMDdmMDZjM2MzN2IzZGQ0ZWU2YmFkM2E5ZTUiLCJpYXQiOjE1NDQ1NDEzNDAsIm5iZiI6MTU0NDU0MTM0MCwiZXhwIjoxNTc2MDc3MzQwLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.TC5m-wVTzsPMtSDShzQBGcZy9awjtI3bwn8og3ma6skLzrL1bIoSSZotrgF6G-l5E60wcXCP4m5yHBS2hyl0a9zw2ufCpI8VEDw7vmpLg0QaDYynqKRaDf8UkVMRJCBg0MyiVre3Wb_5kd9ASSZ1kglKrIOaZeQDoiT5GT2YyXuxPaOWKR7qOu74nV55Q1iZPcycom0J39zmY3sauHUT_MsNniE4Bl89NFas2wdbQuvy8BSm05_cOZSeziWa1tLcdtJt4bCr4fp-OTmOl8dDBdUSxtRhV1dxThiQYJuTKrThBeClshHT3DFgplrcZGIx8gyKGEj3-g7_O2Y8xkX02ThPWwePdQtO088PvrvtBUw1aHyz04G8YUC7xVTP5NVEKkewHBHPN56HlL_sHlzWJXhIsem73HRcRg214LV9kQWm-N2BE-tpJuo7JFaMf_kDFmd99o1RBd5KN8GG09fVRYLsaJ_4UJltXIuEgHlvhE2vtluq1H6zpLZEf1h2E7BuC_ryiub7heKmEVwb5bZzQN7-qs_PbqPbh-GBsfNFxINKnumRabi9R-ZoiFe39iRki661mzWJvXtDOkqfREha6c5TYB6OkW2I8zAoBf5zK5Uq-MXHIRJGpWKlcGSgcnsGD-M12M1sRA6IvMW3ciLGBRZ8kGvSc4m_sbvjX7rXRPQ",
-				"cache-control": "no-cache",
-				"Postman-Token": "88fbcb08-a2c3-4270-bd0b-ecbfc3699c8e"
+					"Content-Type": "application/json",
+					"Authorization": "Bearer " + token,
+					"cache-control": "no-cache",
+					"Postman-Token": "88fbcb08-a2c3-4270-bd0b-ecbfc3699c8e"
 			  },
 			  "processData": false,
 			  "data": doc
 		}
 
-		$.ajax(settings).done(function (response) {
-		  console.log(response);
-		});
+		$.ajax(settings)
+			.done(function (response) {
+				console.log(response);
+			})
+			.fail(function (response) {
+				console.log(response);
+			});
 	}
 }
 
