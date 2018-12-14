@@ -57,13 +57,13 @@ class Main {
 	
 	theJsonPost() {
 		var document = new Document(0, '2018-12-13', 589.26);
-		// document.rows[0] = new DocumentRow(0, 8963.58, 1, 0);
-		// document.rows[1] = new DocumentRow(0, 2358.13, 1, 0);
-		// document.rows[2] = new DocumentRow(0, 6914.75, 1, 0);
+		document.rows[0] = new DocumentRow(0, 8963.58, 1, 0);
+		document.rows[1] = new DocumentRow(0, 2358.13, 1, 0);
+		document.rows[2] = new DocumentRow(0, 6914.75, 1, 0);
 
 		var doc =  JSON.stringify(document);
 		
-		var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjU3ZGQwYzIwNzMwMzRhZTU4ZWIzNDA3YjZhMTNhYTVlNmI4ZDcxNWUzYWUzN2U3MGE0MGI2ZmRkZjY0NzNmZjNjY2QyODVlYzUzOWNjNjIxIn0.eyJhdWQiOiIxIiwianRpIjoiNTdkZDBjMjA3MzAzNGFlNThlYjM0MDdiNmExM2FhNWU2YjhkNzE1ZTNhZTM3ZTcwYTQwYjZmZGRmNjQ3M2ZmM2NjZDI4NWVjNTM5Y2M2MjEiLCJpYXQiOjE1NDQ3MTQ1NzksIm5iZiI6MTU0NDcxNDU3OSwiZXhwIjoxNTc2MjUwNTc5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.zPcJsUK1EUMQgyWSmEJw50o706SXu2Ml0PVDa7UEzVgV1bANn6cXkoZyZwkgYa2tzcTSLk6TTGdImnlWZr1k4JnhAw0yx8zimgGL3MM93x3KQAVs4WZgwej1Gr6qT9VazjzXuJ9qlvU1Xwra-WXM5Id2stt-XSug1PPZtSjPUBC4-GZ69fOjewDF161Vfjee-ht7Gtvw4DGHu8FUPgXPgJfGRjRBCxs0p-y1Ue-3ze_myWfpz6N-ifXSAe9t8j9RnR2I4xbMk5EfNb_ZsIbBWO0_z_XiayDZVbbp3teSZrVrqnYaf0cWhK7sEf_ATLT5HBp5yaNhUGEQZmQRWIE4uHGoPLEzvDsgiZ2UUFYVGbiyL2unB9rR3x3wHGvEl_-JD_3s94HLKy972W50T71wt50v2GeMFcsg46h2tr7IXzI_ccrItg-Uoyq78E8rok9jENhtGLNKJbt00Apbdd89aWcwRWmTFDuRqoabCIccBf3mBJjFhTBw7F63cb8DktLoGDOu6SRmhMiXhykV6p4u4MqrZFuKGjEU-D2nnxDJoCIt9-PznTkWZFeJE3WLvG4wBK0DC730COsZVzl5wK50k2xlDyMeUHx-61cmtlozA1EmhbLVL0cuLT-RDCTVXEyz5ghOlIlOooCwYkEfwQHL-YAEVdtcvu05Wwz9Rf2H7Cs";
+		var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImY5Y2IwZTc3MDYwNDUwYTZlNWM5OWQ2MTU3NjdiNmE1NGZlYjBmNGVkMjAwZDI0ZDAwYjM0YTkwODNmZTJlNDQ4NTlhZDQ3ZGM2MDRmM2NlIn0.eyJhdWQiOiIxIiwianRpIjoiZjljYjBlNzcwNjA0NTBhNmU1Yzk5ZDYxNTc2N2I2YTU0ZmViMGY0ZWQyMDBkMjRkMDBiMzRhOTA4M2ZlMmU0NDg1OWFkNDdkYzYwNGYzY2UiLCJpYXQiOjE1NDQ4MTUzODcsIm5iZiI6MTU0NDgxNTM4NywiZXhwIjoxNTc2MzUxMzg3LCJzdWIiOiI0Iiwic2NvcGVzIjpbXX0.3NA4ppLl40FhmM5jCjMYd61fVxbSdL_p-F921wNKeBY4wmxKBsWzeqoYww3G5ZsWccbTcbtLE2fzp1oa1b6MHixg51cwFlxmCd2zqC8kboZD5javoOipdjOxCRFlhwufkMvpqkO0dhtLy-ZJs2-MEhsS-QrcnKFoh2RMt9ZsOIlKJl-z8CRMObXU6Hwtm6hk_9wMa3MDCjmPPc9PI1ykA5XQynbXMQQFOOun4L9kB_E4qn8g1BROCIdD3LFd-w8zrSghgMLGbP2gVSRwfBuaAjguQhc0wz5OmVJx6wRVs_BdnWykNizBm92tYT58kWZtnEsK1x0AdNZPub5Z8Bwhl_Zk1fBioqFdBpCFx8o1ioszbIFZsIdqcrp5PTAepvZH_69IYxd8JAQKIdOqzmSBalQws102SR1BlfQcpIvzsQW9YkYODUzeVpu8JD44KgaV-u4zZ5AG4XsnKeTHzGTb5pY-j7Sbc1gtZyiQa418sny1edHxE1PRHOzElOtqB0bNpc5zF9Qj5b89szjkG4cTLIp-G75m1wKlb3GAMrZW_87XiGBwaVAoM-jRrX_IFPo_zTf2hSJPsZkRhDQU6SMecn9zUqBGGh0L1Fi1qMtaXroSSdNyoIrP_HqQ8nC71L1REAyb8aVo1GXNTxWHSGXY5Hx_Coq6BbquCgG4D_n8_gw";
 		
 		var settings = {
 			  "async": true,
@@ -74,7 +74,8 @@ class Main {
 					"Content-Type": "application/json",
 					"Authorization": "Bearer " + token,
 					"cache-control": "no-cache",
-					"Postman-Token": "88fbcb08-a2c3-4270-bd0b-ecbfc3699c8e"
+					"req-origin": "Ajax"
+					// "Postman-Token": "88fbcb08-a2c3-4270-bd0b-ecbfc3699c8e"
 			  },
 			  "processData": false,
 			  "data": doc
